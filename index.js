@@ -1,1 +1,2 @@
 displayWeather(city)
+displayWeatherForecast(city)

@@ -1,23 +1,46 @@
-function getDayWeekName(dateObj) {
-    var dayIndex = dateObj.getDay();
+function getDayWeekName(dateObject) {
+    const date = new Date(dateObject * 1000);
+    const dayIndex = date.getDay();
+    let day;
 
     switch (dayIndex) {
         case 0:
-            return "Duminica";
+            day = "Duminica";
+            break;
         case 1:
-            return "Luni";
+            day = "Luni";
+            break;
         case 2:
-            return "Marti";
+            day = "Marti";
+            break;
         case 3:
-            return "Miercuri";
+            day = "Miercuri";
+            break;
         case 4:
-            return "Joi";
+            day = "Joi";
+            break;
         case 5:
-            return "Vineri";
+            day = "Vineri";
+            break;
         case 6:
-            return "Sambata";
+            day = "Sambata";
+            break;
         default:
-            throw 'Ziua nu corespunde'
-
+            throw new Error("AROARE");
     }
+
+    return day;
+}
+
+function getHour(dateObject) {
+    const date = new Date(dateObject * 1000);
+    let hours = date.getHours();
+    if (hours < 10) {
+        hours = "0" + hours;
+    }
+    let minutes = date.getMinutes();
+    if (minutes < 10) {
+        minutes = "0" + minutes;
+    }
+    return `${hours}:${minutes}`;
 }

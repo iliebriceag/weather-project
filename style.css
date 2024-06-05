@@ -86,6 +86,31 @@ header {
 
 
 /* my css */
-.capitalize-description::first-letter {
+.capitalize-description {
   text-transform: capitalize;
+}
+
+#top-btn {
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  height: 50px;
+  width: 50px;
+  z-index: 1;
+  font-size: 1.5rem;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+@keyframes translateBtn {
+  0% {
+    transform: translateX(-200px);
+  }
+}
+
+.translate-btn {
+  animation: translateBtn .5s ease;
 }
