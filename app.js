@@ -75,8 +75,8 @@ sibiu.addEventListener("click", function () {
 function displayWeatherForecast(city) {
   const URL = forecastURL(city);
 
-  let weatherForecastContainer = document.querySelector(".weather-forecast");
-  weatherForecastContainer.innerHTML = "";
+  let forecastDiv = document.querySelector(".weather-forecast");
+  forecastDiv.innerHTML = "";
 
   fetch(URL)
     .then((response) => response.json())
@@ -95,7 +95,7 @@ function displayWeatherForecast(city) {
       });
 
       for (key in daysMap) {
-        weatherForecastContainer.innerHTML += `<h3 class="text-primary">${key}</h3>`;
+        forecastDiv.innerHTML += `<h3 class="text-primary">${key}</h3>`;
         let days = daysMap[key];
         days.forEach((element) => {
           const { dt, main, weather } = element;
@@ -105,7 +105,7 @@ function displayWeatherForecast(city) {
           var description = weather[0].description;
           var weatherIcon = weather[0].icon;
 
-          weatherForecastContainer.innerHTML += `
+          forecastDiv.innerHTML += `
             <div class="w-100 d-flex justify-content-between align-items-center p-2 mb-2 border">
               <div>${hour}</div>
               <div><img src="http://openweathermap.org/img/wn/${weatherIcon}@2x.png"/></div>
