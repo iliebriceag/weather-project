@@ -1,8 +1,8 @@
 // current weather
 function displayWeather(city) {
-  var apiUrl = currentWeatherEndpoint(city)
+  var URL = currentWeatherEndpoint(city)
 
-  fetch(apiUrl)
+  fetch(URL)
     .then((response) => response.json())
     .then((data) => {
       const { dt, name, main, weather, wind } = data;
